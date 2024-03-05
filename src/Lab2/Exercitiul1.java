@@ -1,4 +1,2 @@
-package Lab2;
-
-public class Exercitiul1 {
+package Lab2;public class Exercitiul1 {
 }
