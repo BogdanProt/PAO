@@ -20,5 +20,5 @@ public class StorageService {
     public void addProfessor(Profesor profesor) {
         professors.add(profesor);
     }
-    
+
 }
