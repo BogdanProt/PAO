@@ -5,16 +5,8 @@ public class Profesor extends Person{
     private String course;
     private int year;
 
-    public Profesor() {}
-    public Profesor(String course, int year) {
-        this.course = course;
-        this.year = year;
-    }
-
-    public Profesor(String name, String phoneNumber, String emailAddress, String course, int year) {
-        super(name, phoneNumber, emailAddress);
-        this.course = course;
-        this.year = year;
+    public Profesor(Person person) {
+        super(person.getName(), person.getPhoneNumber(), person.getEmailAddress());
     }
 
     public String getCourse() { return course; }
@@ -23,4 +15,14 @@ public class Profesor extends Person{
     public void setCourse(String course) { this.course = course; }
     public void setYear(int year) { this.year = year; }
 
+    @Override
+    public String toString() {
+        return "Professor{" +
+                " name= '" + getName() + '\'' +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", emailAddress='" + getEmailAddress() + '\'' +
+                ", course='" + course + '\'' +
+                ", year=" + year +
+                '}';
+    }
 }

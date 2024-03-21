@@ -2,30 +2,30 @@ package Lab3.Model;
 import Lab3.Model.Person;
 public class Student extends Person{
     private int studentNumber;
-    private double averageMark;
-    private int classNumber;
+    private float averageMark;
+    private String clasa;
 
-    public Student(String name, String phoneNumber, String emailAddress, int studentNumber, double averageMark, int classNumber) {
-        super(name, phoneNumber, emailAddress);
-        this.studentNumber = studentNumber;
-        this.averageMark = averageMark;
-        this.classNumber = classNumber;
+    public Student(Person person) {
+        super(person.getName(), person.getPhoneNumber(), person.getEmailAddress());
     }
-
-    public Student(int studentNumber, double averageMark, int classNumber) {
-        this.studentNumber = studentNumber;
-        this.averageMark = averageMark;
-        this.classNumber = classNumber;
-    }
-
-    public Student() {}
 
     public void setStudentNumber(int studentNumber) { this.studentNumber = studentNumber; }
-    public void setAverageMark(double averageMark) { this.averageMark = averageMark; }
-    public void setClassNumber(int classNumber) { this.classNumber = classNumber; }
+    public void setAverageMark(float averageMark) { this.averageMark = averageMark; }
+    public void setClasa(String clasa) { this.clasa = clasa; }
 
     public int getStudentNumber() { return studentNumber; }
-    public double getAverageMark() { return averageMark; }
-    public int getClassNumber() { return classNumber; }
+    public float getAverageMark() { return averageMark; }
+    public String getClasa() { return clasa; }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                " name= '" + getName() + '\'' +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", emailAddress='" + getEmailAddress() + '\'' +
+                ", studentNumber= '" + studentNumber + '\'' +
+                ", averageMark= '" + averageMark + '\'' +
+                ", clasa=" + clasa +
+                '}';
+    }
 }
