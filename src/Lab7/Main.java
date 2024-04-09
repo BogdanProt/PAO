@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         TransactionService transactionService = new TransactionService();
 
-        User user1 = new User("John", "Doe", "RO123456789");
+        User user1 = new User("Bogdan", "Prot", "RO123456789");
 
         transactionService.makePayment(user1, 100, Currency.EUR, "Shopping");
         transactionService.makePayment(user1, 50, Currency.USD, "Utilities");
