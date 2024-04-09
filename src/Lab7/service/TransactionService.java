@@ -21,7 +21,11 @@ public class TransactionService {
     public void cancelTransaction(Transaction transaction) {
         try {
             Transaction clonedTransaction = (Transaction) transaction.clone();
-            transactions.add(clonedTransaction);
+            Payment clonedPayment = (Payment) clonedTransaction.getPayment().clone();
+            clonedPayment.setAmount(-clonedPayment.getAmount()); // Setam suma cu minus pentru stornare
+            clonedPayment.setPurpose("Stornare " + clonedPayment.getPurpose());
+            Transaction stornTransaction = new Transaction(generateTransactionId(), clonedPayment);
+            transactions.add(stornTransaction);
         } catch (CloneNotSupportedException e) {
             e.toString();
         }

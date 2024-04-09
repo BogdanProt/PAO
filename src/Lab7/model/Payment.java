@@ -13,6 +13,14 @@ public class Payment {
         this.purpose = purpose;
     }
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    public void setAmount(double amount) { this.amount = amount; }
+
+    public void setPurpose(String purpose) { this.purpose = purpose; }
     public double getAmount() { return amount; }
 
     public Currency getCurrency() { return currency; }
